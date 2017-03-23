@@ -1,2 +1,2 @@
-# [I'm an inline-style link](jeremiahlukus.github.io)
+# [Veiw my page](https://jeremiahlukus.github.io)
 
