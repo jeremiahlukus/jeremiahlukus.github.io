@@ -11,14 +11,18 @@ body {
     font-weight: 400;
     font-size: 1em;
     line-height: 1.25;
-font-family: 'Raleway', Calibri, Arial, sans-serif; }
+    font-family: 'Raleway', Calibri, Arial, sans-serif;
+}
 body a {
     color: #566473;
-text-decoration: none; }
+    text-decoration: none; 
+}
 body a:hover, body a:focus {
-color: #34495e; }
+    color: #34495e; 
+}
 body a button {
-outline: none; }
+    outline: none; 
+}
 
 .large-header {
     position: relative;
@@ -27,8 +31,9 @@ outline: none; }
     overflow: hidden;
     background-size: cover;
     background-position: center center;
-max-height: 700px; }
-.large-header .main-title {
+    max-height: 700px; 
+}
+.large-header .main-title{
     position: absolute;
     margin: 0;
     padding: 0;
@@ -42,22 +47,27 @@ max-height: 700px; }
     -webkit-transform: translate3d(-50%, -50%, 0);
     display: inline-table;
     transform: translate3d(-50%, -50%, 0);
-text-shadow: 2px 3px black; }
+    text-shadow: 2px 3px black; 
+}
 .large-header .main-title .face {
     width: 150px;
-border-radius: 100%; }
+    border-radius: 100%; 
+}
 .large-header .main-title .subtext {
     font-weight: 200;
     font-size: 24px;
     letter-spacing: 0;
-transform: translateY(-10px); }
+    transform: translateY(-10px); 
+}
 
 .site-main .large-header {
     background-image:url("../../img/main-bg.jpg");
-box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.1); }
+    box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.1); 
+}
 .site-main section {
     padding-top: 3em;
-text-align: center; }
+    text-align: center; 
+}
 .site-main section .section-header {
     color: white;
     text-align: center;
@@ -65,34 +75,43 @@ text-align: center; }
     margin: 0 auto;
     font-weight: 200;
     font-size: 3.5em;
-padding-bottom: 20px; }
+    padding-bottom: 20px; 
+}
 .site-main section .section-header img {
     width: 100px;
-vertical-align: middle; }
+    vertical-align: middle; 
+}
 
 .about-me {
     background-color: #004166;
     color: white;
-box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.2); }
+    box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.2);
+}
 .about-me table {
-margin-left: 20px; }
+    margin-left: 20px; 
+}
 
 .my-skills {
     background-color: #0071b3;
     padding: 30px;
-box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.2); }
+    box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.2); 
+}
 .my-skills .skills {
     width: 90%;
     max-width: 980px;
-padding: 0 20px 0 20px; }
+    padding: 0 20px 0 20px; 
+}
 
 .my-projects {
     background-color: #0091e6;
-padding: 30px; }
+    padding: 30px; 
+}
 .my-projects .title {
     font-weight: bold;
     color: white;
-font-size: 32px; }
+    font-size: 32px; 
+}
+
 .my-projects .description {
 font-weight: bold; }
 .my-projects td {
@@ -103,11 +122,13 @@ margin: 20px 10px; }
 text-align: left; }
 .my-projects ul b {
 color: darkmagenta; }
+
 .my-projects ul h4 {
     text-align: left;
     font-weight: 400;
     margin-bottom: 5px;
-margin-left: -20px; }
+    margin-left: -20px; 
+}
 
 .around-the-web {
     background-color: #4dbeff;
@@ -123,10 +144,12 @@ footer {
     text-align: center;
     padding-top: 30px;
     padding-bottom: 15px;
-box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.2); }
+    box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.2); 
+}
 footer .site-code {
     font-weight: bold;
-color: black; }
+    color: black; 
+}
 
 .button {
     border: none;
@@ -148,7 +171,8 @@ color: black; }
     vertical-align: middle;
     z-index: 1;
     transition: all .3s ease-out;
-margin-bottom: 30px; }
+    margin-bottom: 30px; 
+}
 
 table {
 margin-right: 20px; }
@@ -172,31 +196,24 @@ width: 20%; }
     table td {
         padding: 0;
         display: block;
-width: 100%; } }
+        width: 100%; 
+    } 
+}
 @media screen and (max-width: 495px) {
     .main-title p {
         width: 200px;
         margin: 0 auto;
-    margin-top: 20px; }
+        margin-top: 20px; 
+    }
 
     .section-header {
     font-size: 20px; }
     .section-header img {
-width: 45px; } }
+    width: 45px; } 
+}
 
-    .row {
-        margin-right: -15px;
-        margin-left: -15px;
+@media only screen and (max-width: 992px) {
+    #head {
+        display: none;
     }
-
-    .col-md-6{
-                position: relative;
-        min-height: 1px;
-        padding-right: 15px;
-        padding-left: 15px;
-    }
-     @media (min-width: 992px) {
-         .col-md-6{
-             float: left;
-              width: 50%;
-         }
+}
