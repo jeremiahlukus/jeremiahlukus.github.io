@@ -4,14 +4,14 @@ const WINNING_SCORE = 3;
 var canvas;
 var canvasContext;
 var ballX = 750;
-var ballSpeedX = 20;
+var ballSpeedX = 5;
 var ballY = 50;
 var ballSpeedY = 4;
 
 var paddle1Y = 250;
 var paddle2Y = 250;
 
-var player1Score = -1;
+var player1Score = 0;
 var player2Score = 0;
 
 function draw() {
