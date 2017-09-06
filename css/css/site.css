@@ -25,6 +25,10 @@ body a:hover,
 body a:focus {
   color: #34495e;
 }
+body td a {
+  color: #26a69a;
+  font-weight: 900;
+}
 body a button {
   outline: none;
 }
