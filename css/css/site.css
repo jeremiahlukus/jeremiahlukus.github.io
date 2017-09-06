@@ -2,9 +2,9 @@
   font-family: 'siteicons';
   src: url("siteicons.eot");
   src: url("siteicons.eot?#iefix") format("embedded-opentype"),
-    url("siteicons.woff") format("woff"),
-    url("siteicons.ttf") format("truetype"),
-    url("siteicons.svg#fontname") format("svg");
+  url("siteicons.woff") format("woff"),
+  url("siteicons.ttf") format("truetype"),
+  url("siteicons.svg#fontname") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -17,18 +17,18 @@ body {
   line-height: 1.25;
   font-family: 'Raleway', Calibri, Arial, sans-serif;
 }
+
 body a {
-  color: #566473;
+  color: #26a69a;
   text-decoration: none;
+  font-weight: 900;
 }
+
 body a:hover,
 body a:focus {
   color: #34495e;
 }
-body td a {
-  color: #26a69a;
-  font-weight: 900;
-}
+
 body a button {
   outline: none;
 }
@@ -42,6 +42,7 @@ body a button {
   background-position: center center;
   max-height: 700px;
 }
+
 .large-header .main-title {
   position: absolute;
   margin: 0;
@@ -58,10 +59,12 @@ body a button {
   transform: translate3d(-50%, -50%, 0);
   text-shadow: 2px 3px black;
 }
+
 .large-header .main-title .face {
   width: 150px;
   border-radius: 100%;
 }
+
 .large-header .main-title .subtext {
   font-weight: 200;
   font-size: 24px;
@@ -73,10 +76,12 @@ body a button {
   background-image: url("../../img/main-bg.jpg");
   box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.1);
 }
+
 .site-main section {
   padding-top: 3em;
   text-align: center;
 }
+
 .site-main section .section-header {
   color: white;
   text-align: center;
@@ -86,6 +91,7 @@ body a button {
   font-size: 3.5em;
   padding-bottom: 20px;
 }
+
 .site-main section .section-header img {
   width: 100px;
   vertical-align: middle;
@@ -96,6 +102,7 @@ body a button {
   color: white;
   box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.2);
 }
+
 .about-me table {
   margin-left: 20px;
 }
@@ -105,6 +112,7 @@ body a button {
   padding: 30px;
   box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.2);
 }
+
 .my-skills .skills {
   width: 90%;
   max-width: 980px;
@@ -115,6 +123,7 @@ body a button {
   background-color: #0091e6;
   padding: 30px;
 }
+
 .my-projects .title {
   font-weight: bold;
   color: white;
@@ -124,15 +133,19 @@ body a button {
 .my-projects .description {
   font-weight: bold;
 }
+
 .my-projects td {
   padding: 0px 10px;
 }
+
 .my-projects .button {
   margin: 20px 10px;
 }
+
 .my-projects ul {
   text-align: left;
 }
+
 .my-projects ul b {
   color: darkmagenta;
 }
@@ -148,9 +161,11 @@ body a button {
   background-color: #4dbeff;
   box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.2);
 }
+
 .around-the-web .email {
   padding-bottom: 30px;
 }
+
 .around-the-web i {
   padding: 10px;
 }
@@ -163,6 +178,7 @@ footer {
   padding-bottom: 15px;
   box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.2);
 }
+
 footer .site-code {
   font-weight: bold;
   color: black;
@@ -194,9 +210,11 @@ footer .site-code {
 table {
   margin-right: 20px;
 }
+
 table .title {
   font-weight: bold;
 }
+
 table td {
   width: 20%;
 }
@@ -223,6 +241,7 @@ table td {
     width: 100%;
   }
 }
+
 @media screen and (max-width: 495px) {
   .main-title p {
     width: 200px;
