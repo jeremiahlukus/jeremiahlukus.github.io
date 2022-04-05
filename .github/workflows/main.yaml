@@ -14,5 +14,5 @@ jobs:
       - name: Install Dependencies
         run: flutter packages get
       - name: Deploy
-        run: dart pub global activate peanut && flutter pub global run peanut
+        run: dart pub global activate peanut && flutter pub global run peanut && git push origin --set-upstream gh-pages
 
