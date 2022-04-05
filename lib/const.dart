@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 final kAssets = <String>[
+  'assets/developer.json',
   'assets/ruby.json',
   'assets/node.json',
   'assets/flutter.json',
@@ -9,6 +10,7 @@ final kAssets = <String>[
   'assets/developer.json',
 ];
 final kAssetsDescription = <String>[
+  'Open to new freelance opportunities contact me to get one step closer to making your project a reality',
   'I Love Ruby, and Ruby on Rails',
   'I have built dozens of serverless applications using Node',
   'I have built and released several applications using Flutter',

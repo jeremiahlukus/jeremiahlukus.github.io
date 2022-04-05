@@ -62,13 +62,18 @@ class _MyHomePageState extends State<MyHomePage> {
     Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "JEREMIAH PARRACK",
-          style: textTheme.headline4?.copyWith(color: Colors.white),
+        title: FittedBox(
+          fit: BoxFit.fitWidth,
+          child: Text(
+            "JEREMIAH PARRACK",
+            style: textTheme.headline4?.copyWith(color: Colors.white),
+          ),
         ),
-        leading: resumeButton(),
         actions: [
-          resumeButton(),
+          Padding(
+            padding: const EdgeInsets.only(right: 24.0),
+            child: resumeButton(),
+          ),
         ],
       ),
       body: SingleChildScrollView(
