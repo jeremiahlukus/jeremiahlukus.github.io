@@ -71,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 24.0),
+            padding: const EdgeInsets.only(right: 32, left: 32),
             child: resumeButton(),
           ),
         ],

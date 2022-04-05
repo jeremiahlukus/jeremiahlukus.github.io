@@ -29,6 +29,7 @@ dependencies:
   responsive_framework: ^0.1.7
   url_launcher: ^6.0.20
   font_awesome_flutter: ^10.1.0
+  auto_size_text: ^3.0.0
 
 dev_dependencies:
   flutter_test:
