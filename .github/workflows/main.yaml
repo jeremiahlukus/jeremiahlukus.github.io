@@ -10,14 +10,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: subosito/flutter-action@v2
+      - uses: subosito/fl=utter-action@v2
       - name: Install Dependencies
         run: flutter packages get
-      - name: Github Config
-        run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
+      - name: Build
+        run: flutter build web --release --web-renderer canvaskit
       - name: Deploy
-        run: dart pub global activate peanut && flutter pub global run peanut --web-renderer canvaskit && git pull origin gh-pages --rebase && git push origin --set-upstream gh-pages
-
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          publish_dir: ./build/web
