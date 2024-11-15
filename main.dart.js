@@ -74440,7 +74440,7 @@ return A.a([A.a([0.41233895,0.35762064,0.18051042],s),A.a([0.2126,0.7152,0.0722]
 $.oi=A.a([95.047,100,108.883],t.n)
 $.aBw=function(){var s="assets/developer.json"
 return A.a([s,"assets/ruby.json","assets/node.json","assets/flutter.json","assets/devops.json","assets/cloud.json",s],t.s)}()
-$.aBx=A.a(["Open to new freelance opportunities contact me to get one step closer to making your project a reality","I Love Ruby, and Ruby on Rails","I have built dozens of serverless applications using Node","I have built and released several applications using Flutter","Devops and SRE experience at an enterprise level","Cloud Platforms like AWS, Google Cloud, and Heroku","I enjoy doing many things, as a result my exposure to new technologies increases everyday"],t.s)
+$.aBx=A.a(["Full-stack developer transforming ideas into scalable digital solutions","Ruby on Rails expert specializing in robust web applications and APIs","Node.js architect with proven expertise in serverless applications","Flutter specialist delivering high-performance cross-platform mobile apps","DevOps engineer optimizing deployment pipelines and cloud infrastructure","Cloud architect mastering AWS, GCP, and multi-cloud solutions","Innovative technologist passionate about emerging technologies"],t.s)
 $.atY=A.y(t.S,A.aa("aDx"))})();(function lazyInitializers(){var s=hunkHelpers.lazyFinal,r=hunkHelpers.lazy
 s($,"aGf","Qg",()=>A.x(A.x(A.a7(),"ClipOp"),"Intersect"))
 s($,"aH2","aq_",()=>{var q="FontSlant"
