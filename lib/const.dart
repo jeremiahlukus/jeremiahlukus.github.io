@@ -1,4 +1,3 @@
-
 final kAssets = <String>[
   'assets/developer.json',
   'assets/ruby.json',
@@ -9,13 +8,13 @@ final kAssets = <String>[
   'assets/developer.json',
 ];
 final kAssetsDescription = <String>[
-  'Open to new freelance opportunities contact me to get one step closer to making your project a reality',
-  'I Love Ruby, and Ruby on Rails',
-  'I have built dozens of serverless applications using Node',
-  'I have built and released several applications using Flutter',
-  'Devops and SRE experience at an enterprise level',
-  'Cloud Platforms like AWS, Google Cloud, and Heroku',
-  'I enjoy doing many things, as a result my exposure to new technologies increases everyday',
+  'Full-stack developer transforming ideas into scalable digital solutions',
+  'Ruby on Rails expert specializing in robust web applications and APIs',
+  'Node.js architect with proven expertise in serverless applications',
+  'Flutter specialist delivering high-performance cross-platform mobile apps',
+  'DevOps engineer optimizing deployment pipelines and cloud infrastructure',
+  'Cloud architect mastering AWS, GCP, and multi-cloud solutions',
+  'Innovative technologist passionate about emerging technologies',
 ];
 const kCoffee = 'assets/coffee.json';
 const kCollab = 'assets/collaborate.json';
