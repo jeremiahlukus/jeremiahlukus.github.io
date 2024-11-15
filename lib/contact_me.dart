@@ -10,7 +10,7 @@ Container contactMe(ThemeData theme) {
       children: [
         Text(
           "CONTACT ME",
-          style: theme.textTheme.headline2,
+          style: theme.textTheme.displayMedium,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -20,12 +20,12 @@ Container contactMe(ThemeData theme) {
               iconSize: 80,
               icon: const FaIcon(FontAwesomeIcons.envelope),
               onPressed: () async {
-                final Uri _emailLaunchUri = Uri(
+                final Uri emailLaunchUri = Uri(
                   scheme: 'mailto',
                   path: 'jeremiahlukus1@gmail.com',
                   queryParameters: {'subject': 'Freelance Inquiry (Ref: WebSite)'},
                 );
-                await launch(_emailLaunchUri.toString());
+                await launchUrl(emailLaunchUri);
               },
             ),
             IconButton(
@@ -33,7 +33,7 @@ Container contactMe(ThemeData theme) {
               iconSize: 80,
               icon: const FaIcon(FontAwesomeIcons.linkedin),
               onPressed: () async {
-                await launch("https://www.linkedin.com/in/jeremiahlukus/");
+                await launchUrl(Uri.parse("https://www.linkedin.com/in/jeremiahlukus/"));
               },
             ),
             IconButton(
@@ -41,7 +41,7 @@ Container contactMe(ThemeData theme) {
               iconSize: 80,
               icon: const FaIcon(FontAwesomeIcons.github),
               onPressed: () async {
-                await launch("https://github.com/jeremiahlukus/");
+                await launchUrl(Uri.parse("https://github.com/jeremiahlukus/"));
               },
             ),
           ],

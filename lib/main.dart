@@ -8,18 +8,18 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      builder: (context, widget) => ResponsiveWrapper.builder(
-        ClampingScrollWrapper.builder(context, widget!),
-        breakpoints: const [
-          ResponsiveBreakpoint.resize(350, name: MOBILE),
-          ResponsiveBreakpoint.autoScale(600, name: TABLET),
-          ResponsiveBreakpoint.resize(800, name: DESKTOP),
-          ResponsiveBreakpoint.autoScale(1700, name: 'XL'),
+      builder: (context, child) => ResponsiveBreakpoints.builder(
+        child: child!,
+        breakpoints: [
+          const Breakpoint(start: 0, end: 350, name: MOBILE),
+          const Breakpoint(start: 351, end: 600, name: TABLET),
+          const Breakpoint(start: 601, end: 800, name: DESKTOP),
+          const Breakpoint(start: 801, end: 1920, name: 'XL'),
         ],
       ),
       theme: FlexThemeData.light(scheme: FlexScheme.blueWhale),

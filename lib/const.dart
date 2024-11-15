@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 
 final kAssets = <String>[
   'assets/developer.json',

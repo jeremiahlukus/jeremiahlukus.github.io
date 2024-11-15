@@ -11,13 +11,13 @@ Container aboutMe(ThemeData theme, BuildContext context) {
       children: [
         Text(
           "ABOUT ME",
-          style: theme.textTheme.headline2,
+          style: theme.textTheme.displayMedium,
         ),
         ResponsiveRowColumn(
           rowMainAxisAlignment: MainAxisAlignment.center,
           rowPadding: const EdgeInsets.all(30),
           columnPadding: const EdgeInsets.all(30),
-          layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+          layout: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
               ? ResponsiveRowColumnType.COLUMN
               : ResponsiveRowColumnType.ROW,
           children: [

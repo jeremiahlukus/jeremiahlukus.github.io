@@ -14,7 +14,7 @@ import 'package:responsive_framework/responsive_framework.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({super.key});
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -43,12 +43,17 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Column resumeButton() {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
         const Text("Resume"),
+        const SizedBox(height: 4),
         IconButton(
+          constraints: const BoxConstraints(maxHeight: 32),
+          padding: EdgeInsets.zero,
           icon: const FaIcon(FontAwesomeIcons.fileWord),
           onPressed: () async {
-            await launch("https://docs.google.com/document/d/104vzbtyoHl3syc6PHHk4KlmcbtloF76mo7jhL-HDcio/edit");
+            await launchUrl(
+                Uri.parse("https://docs.google.com/document/d/104vzbtyoHl3syc6PHHk4KlmcbtloF76mo7jhL-HDcio/edit"));
           },
         ),
       ],
@@ -66,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
           fit: BoxFit.fitWidth,
           child: Text(
             "JEREMIAH PARRACK",
-            style: textTheme.headline4?.copyWith(color: Colors.white),
+            style: textTheme.headlineMedium?.copyWith(color: Colors.white),
           ),
         ),
         actions: [
