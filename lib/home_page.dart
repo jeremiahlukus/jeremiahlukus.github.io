@@ -301,24 +301,29 @@ class _HomePageState extends State<HomePage> {
             color: Theme.of(context).colorScheme.primary.withOpacity(0.05),
           ),
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-          child: Row(
-            children: [
-              Container(
-                padding: const EdgeInsets.all(4),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.green.withOpacity(0.1),
+          child: IntrinsicHeight(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.green.withOpacity(0.1),
+                  ),
+                  child: const Icon(Icons.check_circle, size: 20, color: Colors.green),
                 ),
-                child: const Icon(Icons.check_circle, size: 20, color: Colors.green),
-              ),
-              const SizedBox(width: 12),
-              Text(
-                skill,
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  color: Theme.of(context).colorScheme.onBackground,
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Text(
+                    skill,
+                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                      color: Theme.of(context).colorScheme.onBackground,
+                    ),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       )).toList(),
