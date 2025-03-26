@@ -19,3 +19,9 @@ final kAssetsDescription = <String>[
 const kCoffee = 'assets/coffee.json';
 const kCollab = 'assets/collaborate.json';
 const kGrad = 'assets/graduate.json';
+
+// App-wide constants
+const String kGithubUrl = 'https://github.com/jeremiahlukus/';
+const String kLinkedInUrl = 'https://www.linkedin.com/in/jeremiahlukus/';
+const String kResumeUrl = 'https://docs.google.com/document/d/104vzbtyoHl3syc6PHHk4KlmcbtloF76mo7jhL-HDcio/edit';
+const String kEmailAddress = 'jeremiahlukus1@gmail.com';
