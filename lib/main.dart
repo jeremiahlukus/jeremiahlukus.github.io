@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:personal_site/home_page.dart';
+import 'package:personal_site/privacy_policy_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -53,7 +54,23 @@ class MyApp extends StatelessWidget {
           const Breakpoint(start: 1921, end: double.infinity, name: '4K'),
         ],
       ),
-      home: const HomePage(),
+      initialRoute: '/',
+      onGenerateRoute: (settings) {
+        switch (settings.name) {
+          case '/':
+            return MaterialPageRoute(
+              builder: (context) => const HomePage(),
+            );
+          case '/privacy':
+            return MaterialPageRoute(
+              builder: (context) => const PrivacyPolicyPage(),
+            );
+          default:
+            return MaterialPageRoute(
+              builder: (context) => const HomePage(),
+            );
+        }
+      },
     );
   }
 }
