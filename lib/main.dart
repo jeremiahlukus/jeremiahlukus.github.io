@@ -17,33 +17,19 @@ class MyApp extends StatelessWidget {
       title: 'Jeremiah Parrack',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.dark(
-          primary: Colors.blue[300]!,
-          secondary: Colors.blue[200]!,
-          background: const Color(0xFF121212),
-          surface: const Color(0xFF1E1E1E),
+        colorScheme: const ColorScheme.dark(
+          primary: Color(0xFF8B5CF6),
+          secondary: Color(0xFF22D3EE),
+          surface: Color(0xFF1A1628),
         ),
         useMaterial3: true,
-        textTheme: GoogleFonts.interTextTheme(ThemeData.dark().textTheme).copyWith(
-          displayLarge: GoogleFonts.inter(
-            fontSize: 72,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-          headlineLarge: GoogleFonts.inter(
-            fontSize: 32,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-          bodyLarge: GoogleFonts.inter(
-            fontSize: 18,
-            color: Colors.white70,
-          ),
-        ),
-        appBarTheme: AppBarTheme(
-          backgroundColor: const Color(0xFF121212).withOpacity(0.7),
+        textTheme: GoogleFonts.interTextTheme(ThemeData.dark().textTheme),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.transparent,
           foregroundColor: Colors.white,
+          elevation: 0,
         ),
+        scaffoldBackgroundColor: const Color(0xFF0D0B14),
       ),
       builder: (context, child) => ResponsiveBreakpoints.builder(
         child: child!,
@@ -57,18 +43,10 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       onGenerateRoute: (settings) {
         switch (settings.name) {
-          case '/':
-            return MaterialPageRoute(
-              builder: (context) => const HomePage(),
-            );
           case '/privacy':
-            return MaterialPageRoute(
-              builder: (context) => const PrivacyPolicyPage(),
-            );
+            return MaterialPageRoute(builder: (_) => const PrivacyPolicyPage());
           default:
-            return MaterialPageRoute(
-              builder: (context) => const HomePage(),
-            );
+            return MaterialPageRoute(builder: (_) => const HomePage());
         }
       },
     );
