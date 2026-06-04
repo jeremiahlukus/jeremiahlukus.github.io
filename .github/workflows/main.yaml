@@ -14,7 +14,9 @@ jobs:
       - name: Install Dependencies
         run: flutter packages get
       - name: Build
-        run: flutter build web --release
+        run: flutter build web --release --web-resources-cdn
+      - name: Remove canvaskit (served from CDN)
+        run: rm -rf build/web/canvaskit
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
