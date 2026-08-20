@@ -40,3 +40,13 @@ flutter:
       fonts:
         - asset: assets/fonts/InstrumentSerif-Regular.ttf
           weight: 400
+    # The web engine falls back to Roboto for anything it cannot resolve and
+    # fetches it from fonts.gstatic.com — a 62 KB cross-origin request that was
+    # the slowest thing on first load. Pointing Roboto at a face we already
+    # bundle satisfies it locally for zero extra bytes.
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/IBMPlexSans-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/IBMPlexSans-SemiBold.ttf
+          weight: 600

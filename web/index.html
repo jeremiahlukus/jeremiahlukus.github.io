@@ -24,6 +24,19 @@
   <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://www.gstatic.com">
 
+  <!-- Preload the first-load critical path. Without these the browser cannot
+       discover main.dart.js until flutter_bootstrap.js has downloaded and run,
+       and cannot discover the fonts until the engine has booted and fetched
+       FontManifest.json — measured at ~90ms and ~460ms of dead waterfall. -->
+  <link rel="preload" href="main.dart.js" as="script">
+  <link rel="preload" href="assets/FontManifest.json" as="fetch" crossorigin>
+  <link rel="preload" href="assets/assets/fonts/InstrumentSerif-Regular.ttf" as="fetch" crossorigin>
+  <link rel="preload" href="assets/assets/fonts/IBMPlexSans-Regular.ttf" as="fetch" crossorigin>
+  <link rel="preload" href="assets/assets/fonts/IBMPlexMono-Regular.ttf" as="fetch" crossorigin>
+  <link rel="preload" href="assets/assets/fonts/IBMPlexMono-Medium.ttf" as="fetch" crossorigin>
+  <link rel="preload" href="assets/assets/fonts/IBMPlexSans-SemiBold.ttf" as="fetch" crossorigin>
+
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
