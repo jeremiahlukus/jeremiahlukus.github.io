@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:personal_site/home_page.dart';
 import 'package:personal_site/privacy_policy_page.dart';
+import 'package:personal_site/resume_page.dart';
 import 'package:personal_site/theme.dart';
 
 void main() => runApp(const MyApp());
@@ -18,9 +19,11 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       onGenerateRoute: (settings) => MaterialPageRoute(
         settings: settings,
-        builder: (_) => settings.name == '/privacy'
-            ? const PrivacyPolicyPage()
-            : const HomePage(),
+        builder: (_) => switch (settings.name) {
+          '/privacy' => const PrivacyPolicyPage(),
+          '/resume' => const ResumePage(),
+          _ => const HomePage(),
+        },
       ),
     );
   }

@@ -191,7 +191,12 @@ class GhostButton extends StatelessWidget {
 class TextLink extends StatelessWidget {
   final String label;
   final String url;
-  const TextLink(this.label, this.url, {super.key});
+
+  /// When set, takes precedence over [url] — used for in-app routes so the
+  /// résumé link navigates instead of opening a new tab.
+  final VoidCallback? onTap;
+
+  const TextLink(this.label, this.url, {super.key, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -199,7 +204,7 @@ class TextLink extends StatelessWidget {
     // spans exactly the label width with no intrinsic-sizing pass. IntrinsicWidth
     // rounds fractional text metrics down and overflowed the Row by ~1.6px.
     return Hoverable(
-      onTap: () => launchExternal(url),
+      onTap: onTap ?? () => launchExternal(url),
       builder: (h) => AnimatedContainer(
         duration: const Duration(milliseconds: 180),
         padding: const EdgeInsets.only(bottom: 4),

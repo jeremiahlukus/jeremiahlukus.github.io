@@ -1,8 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:personal_site/const.dart';
 import 'package:personal_site/main.dart';
+import 'package:personal_site/resume_data.dart';
+import 'package:personal_site/resume_page.dart';
 
 void main() {
   // Wide surface so the desktop branch of every responsive layout is exercised.
@@ -28,11 +32,14 @@ void main() {
   testWidgets('labels contributions as Contributor, not Author', (tester) async {
     await pumpSite(tester);
 
-    for (final w in kWork.where((w) => w.role == 'Contributor')) {
+    final contributions = kWork.where((w) => w.role == 'Contributor').toList();
+    expect(contributions, isNotEmpty);
+    for (final w in contributions) {
       expect(find.text(w.name), findsOneWidget);
     }
-    // Lamby and Crypteia are other people's projects; the badge has to say so.
-    expect(find.text('CONTRIBUTOR'), findsNWidgets(2));
+    // Lamby, Crypteia and Lambdakiq are other people's projects; the badge has
+    // to say so. Counted from the data so adding work cannot silently drop it.
+    expect(find.text('CONTRIBUTOR'), findsNWidgets(contributions.length));
   });
 
   testWidgets('every work link is a valid absolute https url', (tester) async {
@@ -73,6 +80,53 @@ void main() {
       expect(find.text('Jeremiah\nParrack'), findsOneWidget);
     });
   }
+
+  testWidgets('nav reaches the resume page, which is selectable', (tester) async {
+    await pumpSite(tester);
+
+    final navResume = find.text('résumé');
+    expect(navResume, findsOneWidget);
+    await tester.tap(navResume);
+    await tester.pumpAndSettle();
+
+    expect(find.text('RÉSUMÉ'), findsOneWidget);
+    expect(find.text(kResumeName), findsOneWidget);
+    expect(find.text(kResumeSummary), findsOneWidget);
+    // Text must be copyable — the whole page sits inside one SelectionArea.
+    expect(find.byType(SelectionArea), findsOneWidget);
+    // And the PDF has to be offered.
+    expect(find.text('DOWNLOAD PDF'), findsNWidgets(2));
+  });
+
+  testWidgets('resume page renders every role and skill row', (tester) async {
+    await tester.binding.setSurfaceSize(const Size(1200, 4200));
+    addTearDown(() => tester.binding.setSurfaceSize(null));
+
+    final errors = <FlutterErrorDetails>[];
+    final prior = FlutterError.onError;
+    FlutterError.onError = errors.add;
+    addTearDown(() => FlutterError.onError = prior);
+
+    await tester.pumpWidget(const MaterialApp(home: ResumePage()));
+    await tester.pumpAndSettle();
+
+    for (final r in kRoles) {
+      expect(find.text(r.title), findsOneWidget, reason: 'missing role ${r.title}');
+    }
+    for (final (label, _) in kSkills) {
+      expect(find.text(label.toUpperCase()), findsOneWidget,
+          reason: 'missing skill row $label');
+    }
+    expect(errors.map((e) => e.exceptionAsString()).toList(), isEmpty);
+  });
+
+  testWidgets('the downloadable pdf exists in web/', (tester) async {
+    // Guards against the route advertising a PDF that was never generated.
+    final f = File('web/$kResumePdfPath');
+    expect(f.existsSync(), isTrue, reason: 'run tool/build_resume_pdf.py');
+    expect(f.lengthSync(), greaterThan(10000));
+    expect(f.readAsBytesSync().sublist(0, 5), equals('%PDF-'.codeUnits));
+  });
 
   testWidgets('footer exposes the privacy policy route', (tester) async {
     await pumpSite(tester);

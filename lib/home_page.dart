@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:personal_site/const.dart';
+import 'package:personal_site/resume_data.dart';
 import 'package:personal_site/theme.dart';
 import 'package:personal_site/widgets.dart';
 
@@ -66,6 +67,8 @@ class _HomePageState extends State<HomePage> {
                 onHome: () => _scroll.animateTo(0,
                     duration: const Duration(milliseconds: 620),
                     curve: Curves.easeOutCubic),
+                onResume: () =>
+                    Navigator.of(context).pushNamed('/resume'),
               ),
             ),
             SliverToBoxAdapter(
@@ -98,7 +101,7 @@ class _HomePageState extends State<HomePage> {
 class _NavBar extends SliverPersistentHeaderDelegate {
   final bool mobile;
   final double pad;
-  final VoidCallback onWork, onAbout, onContact, onHome;
+  final VoidCallback onWork, onAbout, onContact, onHome, onResume;
 
   _NavBar({
     required this.mobile,
@@ -107,6 +110,7 @@ class _NavBar extends SliverPersistentHeaderDelegate {
     required this.onAbout,
     required this.onContact,
     required this.onHome,
+    required this.onResume,
   });
 
   static const _h = 66.0;
@@ -170,9 +174,9 @@ class _NavBar extends SliverPersistentHeaderDelegate {
                       const SizedBox(width: 18),
                     ],
                     Hoverable(
-                      onTap: () => launchExternal(kResumeUrl),
+                      onTap: onResume,
                       builder: (h) => Text(
-                        'résumé ↗',
+                        'résumé',
                         style: mono(
                           size: 11.5,
                           color: h ? C.amber : C.bone,
@@ -217,7 +221,7 @@ class _Hero extends StatelessWidget {
     );
 
     final lede = Text(
-      'Ten years building production systems and the infrastructure they run on.',
+      'Nine years building production systems and the infrastructure they run on.',
       style: sans(size: mobile ? 16 : 18, height: 1.65, color: C.muted),
     );
 
@@ -702,7 +706,10 @@ class _ContactSection extends StatelessWidget {
             children: [
               TextLink('GitHub', kGithubUrl),
               TextLink('LinkedIn', kLinkedInUrl),
-              TextLink('Résumé', kResumeUrl),
+              // url is the PDF so the label still means something if the
+              // route ever fails; onTap keeps the normal path in-app.
+              TextLink('Résumé', kResumePdfPath,
+                  onTap: () => Navigator.of(context).pushNamed('/resume')),
             ],
           ),
         ],

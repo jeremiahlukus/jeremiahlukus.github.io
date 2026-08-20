@@ -2,8 +2,6 @@
 
 const kGithubUrl = 'https://github.com/jeremiahlukus/';
 const kLinkedInUrl = 'https://www.linkedin.com/in/jeremiahlukus/';
-const kResumeUrl =
-    'https://docs.google.com/document/d/104vzbtyoHl3syc6PHHk4KlmcbtloF76mo7jhL-HDcio/edit';
 const kEmailAddress = 'jeremiahlukus1@gmail.com';
 
 // ─── Hero facts table ────────────────────────────────────────────────────────
@@ -19,9 +17,9 @@ const kFacts = <(String, String)>[
 
 // ─── Selected work ───────────────────────────────────────────────────────────
 
-/// `role` is deliberately explicit. Lamby and Crypteia are Custom Ink projects
-/// that Jeremiah contributed to — not ones he authored — and the site should
-/// say so plainly, because anyone can check in ten seconds.
+/// `role` is deliberately explicit. Lamby and Crypteia belong to the
+/// rails-lambda org — Jeremiah contributed to them, he did not author them —
+/// and the site should say so plainly, because anyone can check in ten seconds.
 class Work {
   final String name;
   final String blurb;
@@ -40,9 +38,9 @@ const kWork = <Work>[
     'FlowJitsu',
     'Jiu-jitsu training tracker. Session logging, practice plans, technique '
         'libraries, and belt progression, with an offline-first local database '
-        'that syncs to the cloud.',
+        'that syncs to the cloud. On iOS and Android.',
     'Author',
-    'Flutter · Firebase · iOS + Android',
+    'Flutter · Firebase · 1,000+ users',
     [
       ('App Store', 'https://apps.apple.com/us/app/flowjitsu/id6757253111'),
       (
@@ -56,7 +54,7 @@ const kWork = <Work>[
     'Guitar tab and chord library for worship musicians, with a catalog of '
         'more than 6,000 songs, favorites, and offline access.',
     'Author',
-    'Flutter · Firebase · iOS',
+    'Flutter · Firebase · 600+ users',
     [
       (
         'App Store',
@@ -75,6 +73,14 @@ const kWork = <Work>[
     [('App Store', 'https://apps.apple.com/us/developer/jeremiah-parrack/id1376363500')],
   ),
   Work(
+    'Smart Sprout',
+    'AI-powered learning companion that builds personalized learning paths and '
+        'adapts the material as you progress.',
+    'Author',
+    'Flutter · Education · iOS',
+    [('App Store', 'https://apps.apple.com/us/app/smart-sprout/id6739066848')],
+  ),
+  Work(
     'Acuity PPM',
     'Ongoing DevOps and infrastructure work for a project portfolio '
         'management platform.',
@@ -88,7 +94,7 @@ const kWork = <Work>[
         'event payload.',
     'Contributor',
     'Ruby · 625 stars',
-    [('GitHub', 'https://github.com/customink/lamby')],
+    [('GitHub', 'https://github.com/rails-lambda/lamby')],
   ),
   Work(
     'Crypteia',
@@ -96,7 +102,26 @@ const kWork = <Work>[
         'into any runtime or container.',
     'Contributor',
     'Rust · 77 stars',
-    [('GitHub', 'https://github.com/customink/crypteia')],
+    [('GitHub', 'https://github.com/rails-lambda/crypteia')],
+  ),
+  Work(
+    'Lambdakiq',
+    'ActiveJob backend that runs Rails jobs on SQS and Lambda. Modernized CI, '
+        'added a release workflow, and moved the gem to Ruby 3.4.',
+    'Contributor',
+    'Ruby · 198 stars',
+    [('GitHub', 'https://github.com/rails-lambda/lambdakiq')],
+  ),
+  Work(
+    'authorize_net_plugin',
+    'Flutter plugin wrapping the native Android and iOS Authorize.Net payment '
+        'SDKs behind a single Dart API. Ten releases and counting.',
+    'Author',
+    'Dart · pub.dev package',
+    [
+      ('pub.dev', 'https://pub.dev/packages/authorize_net_plugin'),
+      ('GitHub', 'https://github.com/jeremiahlukus/authorize_net_plugin'),
+    ],
   ),
   Work(
     'flutter_template',
@@ -111,7 +136,7 @@ const kWork = <Work>[
 // ─── About ───────────────────────────────────────────────────────────────────
 
 const kAboutParagraphs = <String>[
-  "I'm a lead software engineer with a decade of experience building production "
+  "I'm a lead software engineer with nine years of experience building production "
       'systems. At Manheim I lead SRE and DevOps work across onshore and '
       'offshore teams.',
   'I contribute to open source across Ruby, Rust, and Flutter — including Lamby, '
