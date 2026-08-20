@@ -21,6 +21,9 @@ REQUIRED = [
     "Ten releases, still shipping",
     "removed a spurious iOS simulator warning",
     "nine years",
+    "Built the first production platform",
+    "$3B valuation",
+    "the only developer",
 ]
 FORBIDDEN = [
     "1,075 pull requests",   # trimmed from the fleet-scale bullet
@@ -28,6 +31,7 @@ FORBIDDEN = [
     "packages repository",   # documentation-only contribution was dropped
     "190 repositories",      # superseded by the full-history figure
     "customink/",            # Lamby and Crypteia moved to rails-lambda
+    "Maintained the Ruby codebase",  # Stord work is framed as building, not maintaining
 ]
 
 

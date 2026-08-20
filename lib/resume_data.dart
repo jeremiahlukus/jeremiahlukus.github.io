@@ -110,17 +110,17 @@ const kRoles = <Role>[
   ),
   Role(
     title: 'Software Engineer',
-    org: 'STORD',
+    org: 'Stord',
     dates: 'Sept 2017 – May 2018',
-    blurb: 'Warehousing and distribution network with custom software for '
-        'multi-warehouse product flow.',
+    blurb: 'Seed-stage logistics startup where I was the only developer. Stord '
+        'has since raised \$777M and reached a \$3B valuation.',
     bullets: [
-      Bullet('',
-          'Built SOAP and REST integrations against third-party warehouse management systems to push and pull inventory data.'),
-      Bullet('',
-          'Maintained the Ruby codebase through upgrades, patches, releases, and database migrations; played a key role in a database redesign.'),
-      Bullet('',
-          'Introduced continuous integration, automated error notification for the development team, and Elasticsearch; oversaw unit and functional testing, debugging, security, and documentation.'),
+      Bullet('Built the first production platform: ',
+          'the Ruby application and data model behind multi-warehouse inventory and product flow, letting brands see and move stock across every warehouse from one dashboard — including a ground-up redesign of the database it all sat on.'),
+      Bullet('Owned the integration layer: ',
+          'connected third-party warehouse management systems over SOAP and REST so inventory synced automatically between Stord and partner warehouses, which is what made a network of independent operators work as one.'),
+      Bullet('Laid the engineering foundations: ',
+          'introduced continuous integration, automated error alerting, and Elasticsearch, and set the unit and functional testing, debugging, security, and documentation practices the team scaled on.'),
     ],
   ),
 ];

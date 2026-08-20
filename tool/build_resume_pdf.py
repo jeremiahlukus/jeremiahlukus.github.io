@@ -168,14 +168,14 @@ F.append(bullet("Delivery: ", "led a small delivery team, translated client requ
 
 F.append(Spacer(1, 10))
 F += role_header(
-    "Software Engineer", "STORD", "Sept 2017 &ndash; May 2018",
-    "Warehousing and distribution network with custom software for multi-warehouse product flow.")
-for t in [
-    "Built SOAP and REST integrations against third-party warehouse management systems to push and pull inventory data.",
-    "Maintained the Ruby codebase through upgrades, patches, releases, and database migrations; played a key role in a database redesign.",
-    "Introduced continuous integration, automated error notification for the development team, and Elasticsearch; oversaw unit and functional testing, debugging, security, and documentation.",
+    "Software Engineer", "Stord", "Sept 2017 &ndash; May 2018",
+    "Seed-stage logistics startup where I was the only developer. Stord has since raised $777M and reached a $3B valuation.")
+for lead, t in [
+    ("Built the first production platform: ", "the Ruby application and data model behind multi-warehouse inventory and product flow, letting brands see and move stock across every warehouse from one dashboard &mdash; including a ground-up redesign of the database it all sat on."),
+    ("Owned the integration layer: ", "connected third-party warehouse management systems over SOAP and REST so inventory synced automatically between Stord and partner warehouses, which is what made a network of independent operators work as one."),
+    ("Laid the engineering foundations: ", "introduced continuous integration, automated error alerting, and Elasticsearch, and set the unit and functional testing, debugging, security, and documentation practices the team scaled on."),
 ]:
-    F.append(bullet("", t))
+    F.append(bullet(lead, t))
 
 F += section("OPEN SOURCE")
 F.append(Paragraph("RUBY &amp; RUST &mdash; RUNNING RAILS ON AWS LAMBDA", S["grp"]))

@@ -145,13 +145,17 @@ bullet("published to the App Store. Flutter.", bold_lead="Smart Sprout — ", in
 bullet("led a small delivery team, translated client requirements into scoped work, and built in-app subscriptions, "
        "release automation, and reusable logging and monitoring packages.", bold_lead="Delivery: ")
 
-role("Software Engineer", "STORD", "Sept 2017 – May 2018",
-     "Warehousing and distribution network with custom software for multi-warehouse product flow.")
-bullet("built SOAP and REST integrations against third-party warehouse management systems to push and pull inventory data.")
-bullet("maintained the Ruby codebase through upgrades, patches, releases, and database migrations; played a key role "
-       "in a database redesign.")
-bullet("introduced continuous integration, automated error notification for the development team, and Elasticsearch; "
-       "oversaw unit and functional testing, debugging, security, and documentation.")
+role("Software Engineer", "Stord", "Sept 2017 – May 2018",
+     "Seed-stage logistics startup where I was the only developer. Stord has since raised $777M and reached a $3B valuation.")
+bullet("the Ruby application and data model behind multi-warehouse inventory and product flow, letting brands see "
+       "and move stock across every warehouse from one dashboard — including a ground-up redesign of the database "
+       "it all sat on.", bold_lead="Built the first production platform: ")
+bullet("connected third-party warehouse management systems over SOAP and REST so inventory synced automatically "
+       "between Stord and partner warehouses, which is what made a network of independent operators work as one.",
+       bold_lead="Owned the integration layer: ")
+bullet("introduced continuous integration, automated error alerting, and Elasticsearch, and set the unit and "
+       "functional testing, debugging, security, and documentation practices the team scaled on.",
+       bold_lead="Laid the engineering foundations: ")
 
 # ── Open source ──────────────────────────────────────────────────────────────
 heading("Open Source")
