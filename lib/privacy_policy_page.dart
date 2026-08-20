@@ -38,11 +38,30 @@ class PrivacyPolicyPage extends StatelessWidget {
                   _buildSection(
                     context,
                     'Privacy Policy',
-                    '''Last updated: January 1, 2026
+                    '''Last updated: August 20, 2026
+
+This Privacy Policy is published by **Jeremiah Parrack**, an individual sole proprietor (the "Developer", "we", "us", or "our"), and it covers the mobile application **FlowJitsu** (Google Play package name: **com.jparrack.flowjitsu**), distributed on the Google Play Store by the developer **Jeremiah Parrack**.
 
 The privacy of your data—and it is your data, not ours!—is a big deal to us. In this policy, we lay out: what data we collect and why; how your data is handled; and your rights with respect to your data. We promise we never sell your data: never have, never will.
 
-This policy applies to all products, services, and applications built and maintained by Jeremiah Parrack.''',
+This policy applies to **FlowJitsu** and to all other products, services, and applications built and maintained by **Jeremiah Parrack**.''',
+                  ),
+                  _buildSection(
+                    context,
+                    'App and Developer Identification',
+                    '''• **App name:** FlowJitsu
+
+• **Google Play package name (application ID):** com.jparrack.flowjitsu
+
+• **Developer / legal entity:** Jeremiah Parrack (individual sole proprietor)
+
+• **Google Play developer account name:** Jeremiah Parrack
+
+• **Contact email:** jeremiahlukus1@gmail.com
+
+• **Country of operation:** United States
+
+This is the official privacy policy for the FlowJitsu app and it is the policy linked from the FlowJitsu Google Play store listing and from the app's Google Play Data safety section.''',
                   ),
                   _buildSection(
                     context,
@@ -52,43 +71,77 @@ This policy applies to all products, services, and applications built and mainta
                   _buildSubSection(
                     context,
                     'Identity and Access',
-                    '''When you sign up for our products or services, we may ask for identifying information such as your name, email address, and maybe a company name. That's so you can personalize your account, and we can send you product updates and other essential information. We may also send you optional surveys from time to time to help us understand how you use our products and to make improvements.
+                    '''FlowJitsu uses Google Firebase Authentication to sign you in. You can create an account with an email address and password, or sign in with Google. When you do, we receive and store your email address, a unique account identifier, and — if you sign in with Google — the display name and profile photo associated with that Google account. We use this to sign you in, keep your training data attached to your account, and sync it across your devices.
 
-We'll never sell your personal information to third parties, and we won't use your name or company in marketing statements without your permission either.''',
+We'll never sell your personal information to third parties, and we won't use your name in marketing statements without your permission.''',
                   ),
                   _buildSubSection(
                     context,
-                    'Billing Information',
-                    '''If you sign up for a paid product or service, you may be asked to provide your payment information and billing address. Credit card information is submitted directly to our payment processor and doesn't hit our servers. We store a record of the payment transaction, including the last 4 digits of the credit card number, for purposes of account history, invoicing, and billing support.''',
+                    'Payment and Financial Information',
+                    '''FlowJitsu does not accept payments. We do not sell subscriptions or in-app purchases through the app, and we never collect, process, or store payment card numbers, bank account details, billing addresses, or any other financial information.''',
                   ),
                   _buildSubSection(
                     context,
-                    'Website Interactions',
-                    '''We collect information about your browsing activity for analytics and statistical purposes such as conversion rate testing and experimenting with new product designs. This includes, for example, your browser and operating system versions, your IP address, which web pages you visited and how long they took to load, and which website referred you to us.''',
-                  ),
-                  _buildSubSection(
-                    context,
-                    'Cookies',
-                    '''We use persistent first-party cookies and some third-party cookies to store certain preferences, make it easier for you to use our applications, and perform A/B testing as well as support some analytics.
+                    'Training Content You Create',
+                    '''FlowJitsu exists to log your jiu-jitsu training, so most of the data in the app is content you enter yourself: session logs and dates, techniques, notes, practice plans, instructional libraries, belt and stripe progress, and any photos or videos you choose to attach to a session.
 
-A cookie is a piece of text stored by your browser. It may help remember login information and site preferences. You can adjust cookie retention settings and accept or block individual cookies in your browser settings, although our apps won't work and other aspects of our service may not function properly if you turn cookies off.''',
+This content is stored locally on your device and, when you are signed in, synced to your account in Google Cloud Firestore. Photos and videos you attach are uploaded to Google Firebase Storage. Your training content is private to your account — we do not publish it, share it with other users, or sell it.''',
+                  ),
+                  _buildSubSection(
+                    context,
+                    'AI-Assisted Features',
+                    '''FlowJitsu includes optional AI features, such as identifying a technique from a description you type and looking up the curriculum or contents of a published instructional.
+
+When you use one of these features, the text of that specific request — for example, the technique description or instructional title you entered — is sent to third-party AI providers to generate a response. We currently use **OpenAI** (api.openai.com) and **Perplexity** (api.perplexity.ai) for this purpose. We send only the text needed to answer the request. We do not send your account email, your full training history, or your photos and videos to these providers. If you do not use the AI features, no data is sent to them.
+
+Your use of these features is subject to the privacy policies of those providers in addition to this one.''',
+                  ),
+                  _buildSubSection(
+                    context,
+                    'App Usage and Device Information',
+                    '''We use Google Firebase Analytics to understand how the app is used so we can fix problems and decide what to improve. This collects information such as your device model and operating system version, app version, language and general region, crash and error diagnostics, in-app events (for example, which screens are opened), and a mobile advertising identifier.
+
+We use this only for analytics and stability. We do not serve third-party advertising in FlowJitsu and we do not use this data to build advertising profiles or sell it to data brokers. You can reset or limit the advertising identifier in your device settings (on Android: Settings › Privacy › Ads).''',
+                  ),
+                  _buildSubSection(
+                    context,
+                    'Local Storage and Cookies',
+                    '''On your device, FlowJitsu stores your training database and your preferences locally so the app works offline and remembers your settings. Clearing the app's storage or uninstalling the app removes this local copy.
+
+On our website, we use first-party storage and cookies to remember basic preferences. A cookie is a small piece of text stored by your browser. You can accept or block cookies in your browser settings, though some parts of the site may not work correctly if you block them.''',
                   ),
                   _buildSubSection(
                     context,
                     'Voluntary Correspondence',
-                    '''When you email us with a question or to ask for help, we keep that correspondence, including your email address, so that we have a history of past correspondence to reference if you reach out in the future.
-
-We also store information you may volunteer, for example, written responses to surveys.''',
+                    '''When you email us with a question or to ask for help, we keep that correspondence, including your email address, so that we have a history of past correspondence to reference if you reach out in the future.''',
                   ),
                   _buildSubSection(
                     context,
-                    'Mobile App Permissions',
-                    '''We offer optional mobile apps for some of our products. Because of how the platforms are designed, our apps typically must request your consent before accessing contacts, calendar, camera, and other privacy-sensitive features of your device. Consent is always optional and our apps will function without it, though some features may be unavailable.''',
+                    'Device Permissions We Request',
+                    '''FlowJitsu asks for your consent before using privacy-sensitive features of your device. Every one of these is optional — the app works without them, though the related feature will be unavailable. We request only:
+
+• **Camera** — to take photos and videos of your training sessions from inside the app.
+
+• **Microphone** — to record audio as part of a training video.
+
+• **Photos and media** — to attach existing photos or videos from your library to a session.
+
+• **Notifications** — to send you reminders you have set up in the app.
+
+Photos, videos, and audio captured through these permissions are used only for the training entries you attach them to. FlowJitsu does not request access to your contacts, your calendar, your location, your call logs, your SMS messages, or your microphone outside of video recording.''',
                   ),
                   _buildSection(
                     context,
                     'When We Access or Disclose Your Information',
-                    '''**To provide products or services you've requested.** We may use third-party subprocessors to help run our applications and provide the Services to you.
+                    '''**To provide products or services you've requested.** We use the following third-party subprocessors to run FlowJitsu:
+
+• **Google (Firebase)** — Firebase Authentication for sign-in, Cloud Firestore for your training data, Firebase Storage for photos and videos, and Firebase Analytics for usage and stability reporting.
+
+• **OpenAI** — processes the text of AI-assisted requests you initiate, as described above.
+
+• **Perplexity** — processes instructional lookup requests you initiate, as described above.
+
+We do not share your information with any other third parties for their own purposes.
 
 **To help you troubleshoot or squash a software bug, with your permission.** If at any point we need to access your content to help you with a support case, we will ask for your consent before proceeding.
 
@@ -122,7 +175,18 @@ We also store information you may volunteer, for example, written responses to s
                   _buildSection(
                     context,
                     'How We Secure Your Data',
-                    '''All data is encrypted via SSL/TLS when transmitted from our servers to your browser. The database backups are also encrypted. In addition, we go to great lengths to secure your data at rest.''',
+                    '''All data is encrypted in transit via SSL/TLS between your device and our service providers, and is encrypted at rest by Google Cloud Platform, which hosts our Firebase services. Access to your training content is restricted to your authenticated account through Firebase security rules.''',
+                  ),
+                  _buildSection(
+                    context,
+                    'Deleting Your Account and Your Data',
+                    '''You can delete your FlowJitsu account and its associated data at any time, in either of two ways:
+
+• **In the app.** Open your profile screen and choose **Delete Account**. This erases the training data stored on your device and permanently deletes your sign-in account, after which you can no longer access it.
+
+• **By email.** Write to us at **jeremiahlukus1@gmail.com** from the address associated with your account and ask us to delete your account and data. We will confirm and complete the request within 30 days.
+
+A full deletion removes your account record, your training logs and notes, and the photos and videos you uploaded. Deletion from routine backups completes within 30 days, except where we are required to retain something to comply with a legal obligation. Data stored only locally on your device is also removed if you clear the app's storage or uninstall the app.''',
                   ),
                   _buildSection(
                     context,
@@ -139,7 +203,10 @@ We also store information you may volunteer, for example, written responses to s
                     'Changes and Questions',
                     '''We may update this policy as needed to comply with relevant regulations and reflect any new practices. Whenever we make a significant change to our policies, we will refresh the date at the top of this page and take any other appropriate steps to notify users.
 
-Have any questions, comments, or concerns about this privacy policy, your data, or your rights with respect to your information? Please get in touch by emailing us and we'll be happy to try to answer them!''',
+Have any questions, comments, or concerns about this privacy policy, your data, or your rights with respect to your information? Please get in touch and we'll be happy to try to answer them:
+
+**Jeremiah Parrack** — developer of **FlowJitsu** (com.jparrack.flowjitsu)
+Email: **jeremiahlukus1@gmail.com**''',
                   ),
                   const SizedBox(height: 32),
                   _buildContactButton(context),
@@ -166,7 +233,7 @@ Have any questions, comments, or concerns about this privacy policy, your data, 
         ),
         const SizedBox(height: 8),
         Text(
-          'Your data privacy is important to us',
+          'FlowJitsu (com.jparrack.flowjitsu) · Jeremiah Parrack',
           style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                 color: Colors.white70,
               ),
