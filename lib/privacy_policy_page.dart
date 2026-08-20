@@ -1,32 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'package:personal_site/theme.dart';
+
 class PrivacyPolicyPage extends StatelessWidget {
   const PrivacyPolicyPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: C.ink,
       appBar: AppBar(
-        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
-        title: Text(
-          'Privacy Policy',
-          style: TextStyle(
-            color: Theme.of(context).colorScheme.primary,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        backgroundColor: C.ink,
+        title: Text('PRIVACY POLICY',
+            style: mono(size: 11, color: C.bone, tracking: 2.2)),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Theme.of(context).colorScheme.primary),
+          icon: const Icon(Icons.arrow_back, color: C.muted, size: 20),
           onPressed: () => Navigator.of(context).pushReplacementNamed('/'),
         ),
+        shape: const Border(bottom: BorderSide(color: C.line)),
       ),
       body: Container(
-        decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.surface,
-        ),
+        color: C.ink,
         child: SingleChildScrollView(
-          padding: const EdgeInsets.all(24.0),
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 40),
           child: Center(
             child: ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 800),
@@ -37,10 +34,10 @@ class PrivacyPolicyPage extends StatelessWidget {
                   const SizedBox(height: 32),
                   _buildSection(
                     context,
-                    'Privacy Policy',
+                    'Overview',
                     '''Last updated: August 20, 2026
 
-This Privacy Policy is published by **Jeremiah Parrack**, an individual sole proprietor (the "Developer", "we", "us", or "our"), and it covers the mobile application **FlowJitsu** (Google Play package name: **com.jparrack.flowjitsu**), distributed on the Google Play Store by the developer **Jeremiah Parrack**.
+This Privacy Policy is published by **Jeremiah Parrack**, an individual sole proprietor (the "Developer", "we", "us", or "our"), and it covers the mobile application **FlowJitsu** (Google Play package name: **com.jparrack.flowjitsu**), distributed on the Google Play Store and the Apple App Store by the developer **Jeremiah Parrack**.
 
 The privacy of your data—and it is your data, not ours!—is a big deal to us. In this policy, we lay out: what data we collect and why; how your data is handled; and your rights with respect to your data. We promise we never sell your data: never have, never will.
 
@@ -53,15 +50,19 @@ This policy applies to **FlowJitsu** and to all other products, services, and ap
 
 • **Google Play package name (application ID):** com.jparrack.flowjitsu
 
+• **Apple App Store:** FlowJitsu (Apple ID 6757253111)
+
 • **Developer / legal entity:** Jeremiah Parrack (individual sole proprietor)
 
 • **Google Play developer account name:** Jeremiah Parrack
+
+• **Apple App Store seller name:** Jeremiah Parrack
 
 • **Contact email:** jeremiahlukus1@gmail.com
 
 • **Country of operation:** United States
 
-This is the official privacy policy for the FlowJitsu app and it is the policy linked from the FlowJitsu Google Play store listing and from the app's Google Play Data safety section.''',
+This is the official privacy policy for the FlowJitsu app. It is the policy linked from the FlowJitsu Google Play store listing and its Google Play Data safety section, and from the FlowJitsu Apple App Store listing and its App Privacy details.''',
                   ),
                   _buildSection(
                     context,
@@ -224,19 +225,20 @@ Email: **jeremiahlukus1@gmail.com**''',
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'Privacy Policy',
-          style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                color: Theme.of(context).colorScheme.primary,
-                fontSize: 48,
-              ),
+        Row(
+          children: [
+            Text('LEGAL', style: mono(size: 10, color: C.amber, tracking: 2.4)),
+            const SizedBox(width: 12),
+            Expanded(child: Container(height: 1, color: C.line)),
+          ],
         ),
-        const SizedBox(height: 8),
+        const SizedBox(height: 24),
+        Text('Privacy Policy',
+            style: serif(size: 46, height: 1.05, tracking: -1.2)),
+        const SizedBox(height: 14),
         Text(
           'FlowJitsu (com.jparrack.flowjitsu) · Jeremiah Parrack',
-          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                color: Colors.white70,
-              ),
+          style: mono(size: 11.5, color: C.muted, tracking: 0.4),
         ),
       ],
     );
@@ -244,17 +246,11 @@ Email: **jeremiahlukus1@gmail.com**''',
 
   Widget _buildSection(BuildContext context, String title, String content) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 24.0),
+      padding: const EdgeInsets.only(bottom: 30.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            title,
-            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                  color: Theme.of(context).colorScheme.primary,
-                  fontWeight: FontWeight.bold,
-                ),
-          ),
+          Text(title, style: serif(size: 25, height: 1.15, tracking: -0.4)),
           const SizedBox(height: 12),
           _buildRichText(context, content),
         ],
@@ -264,18 +260,17 @@ Email: **jeremiahlukus1@gmail.com**''',
 
   Widget _buildSubSection(BuildContext context, String title, String content) {
     return Padding(
-      padding: const EdgeInsets.only(left: 16.0, bottom: 20.0),
+      padding: const EdgeInsets.only(left: 18.0, bottom: 24.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            title,
-            style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600,
-                ),
-          ),
-          const SizedBox(height: 8),
+          Text(title,
+              style: mono(
+                  size: 11,
+                  color: C.amber,
+                  tracking: 1.6,
+                  weight: FontWeight.w500)),
+          const SizedBox(height: 10),
           _buildRichText(context, content),
         ],
       ),
@@ -284,60 +279,45 @@ Email: **jeremiahlukus1@gmail.com**''',
 
   Widget _buildRichText(BuildContext context, String content) {
     // Simple markdown-like bold text parsing
-    final List<TextSpan> spans = [];
-    final RegExp boldPattern = RegExp(r'\*\*(.+?)\*\*');
-    int lastEnd = 0;
+    final spans = <TextSpan>[];
+    final boldPattern = RegExp(r'\*\*(.+?)\*\*');
+    final body = sans(size: 14.5, color: C.muted, height: 1.8);
+    final strong =
+        sans(size: 14.5, color: C.bone, height: 1.8, weight: FontWeight.w600);
+    var lastEnd = 0;
 
     for (final match in boldPattern.allMatches(content)) {
       if (match.start > lastEnd) {
         spans.add(TextSpan(
-          text: content.substring(lastEnd, match.start),
-          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                color: Colors.white70,
-                height: 1.6,
-              ),
-        ));
+            text: content.substring(lastEnd, match.start), style: body));
       }
-      spans.add(TextSpan(
-        text: match.group(1),
-        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              height: 1.6,
-            ),
-      ));
+      spans.add(TextSpan(text: match.group(1), style: strong));
       lastEnd = match.end;
     }
 
     if (lastEnd < content.length) {
-      spans.add(TextSpan(
-        text: content.substring(lastEnd),
-        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-              color: Colors.white70,
-              height: 1.6,
-            ),
-      ));
+      spans.add(TextSpan(text: content.substring(lastEnd), style: body));
     }
 
-    return RichText(
-      text: TextSpan(children: spans),
-    );
+    return RichText(text: TextSpan(children: spans));
   }
 
   Widget _buildContactButton(BuildContext context) {
-    return Center(
-      child: ElevatedButton.icon(
-        onPressed: () => _launchEmail(),
-        icon: const Icon(Icons.email, color: Colors.white),
-        label: const Text(
-          'Contact Us',
-          style: TextStyle(color: Colors.white),
-        ),
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Theme.of(context).colorScheme.primary,
-          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30),
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        child: GestureDetector(
+          onTap: _launchEmail,
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 15),
+            color: C.amber,
+            child: Text('EMAIL US',
+                style: mono(
+                    size: 11.5,
+                    color: C.ink,
+                    tracking: 1.4,
+                    weight: FontWeight.w500)),
           ),
         ),
       ),
