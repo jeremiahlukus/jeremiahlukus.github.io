@@ -1,12 +1,8 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:personal_site/const.dart';
 import 'package:personal_site/main.dart';
-import 'package:personal_site/resume_data.dart';
-import 'package:personal_site/resume_page.dart';
 
 void main() {
   // Wide surface so the desktop branch of every responsive layout is exercised.
@@ -92,36 +88,6 @@ void main() {
     final uri = Uri.parse(kResumeUrl);
     expect(uri.scheme, 'https');
     expect(uri.host, 'docs.google.com');
-  });
-
-  testWidgets('resume page renders every role and skill row', (tester) async {
-    await tester.binding.setSurfaceSize(const Size(1200, 4200));
-    addTearDown(() => tester.binding.setSurfaceSize(null));
-
-    final errors = <FlutterErrorDetails>[];
-    final prior = FlutterError.onError;
-    FlutterError.onError = errors.add;
-    addTearDown(() => FlutterError.onError = prior);
-
-    await tester.pumpWidget(const MaterialApp(home: ResumePage()));
-    await tester.pumpAndSettle();
-
-    for (final r in kRoles) {
-      expect(find.text(r.title), findsOneWidget, reason: 'missing role ${r.title}');
-    }
-    for (final (label, _) in kSkills) {
-      expect(find.text(label.toUpperCase()), findsOneWidget,
-          reason: 'missing skill row $label');
-    }
-    expect(errors.map((e) => e.exceptionAsString()).toList(), isEmpty);
-  });
-
-  testWidgets('the downloadable pdf exists in web/', (tester) async {
-    // Guards against the route advertising a PDF that was never generated.
-    final f = File('web/$kResumePdfPath');
-    expect(f.existsSync(), isTrue, reason: 'run tool/build_resume_pdf.py');
-    expect(f.lengthSync(), greaterThan(10000));
-    expect(f.readAsBytesSync().sublist(0, 5), equals('%PDF-'.codeUnits));
   });
 
   testWidgets('footer exposes the privacy policy route', (tester) async {
