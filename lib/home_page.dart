@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:personal_site/const.dart';
-import 'package:personal_site/resume_data.dart';
 import 'package:personal_site/theme.dart';
 import 'package:personal_site/widgets.dart';
 
@@ -67,8 +66,7 @@ class _HomePageState extends State<HomePage> {
                 onHome: () => _scroll.animateTo(0,
                     duration: const Duration(milliseconds: 620),
                     curve: Curves.easeOutCubic),
-                onResume: () =>
-                    Navigator.of(context).pushNamed('/resume'),
+                onResume: () => launchExternal(kResumeUrl),
               ),
             ),
             SliverToBoxAdapter(
@@ -176,7 +174,7 @@ class _NavBar extends SliverPersistentHeaderDelegate {
                     Hoverable(
                       onTap: onResume,
                       builder: (h) => Text(
-                        'résumé',
+                        'résumé ↗',
                         style: mono(
                           size: 11.5,
                           color: h ? C.amber : C.bone,
@@ -706,10 +704,7 @@ class _ContactSection extends StatelessWidget {
             children: [
               TextLink('GitHub', kGithubUrl),
               TextLink('LinkedIn', kLinkedInUrl),
-              // url is the PDF so the label still means something if the
-              // route ever fails; onTap keeps the normal path in-app.
-              TextLink('Résumé', kResumePdfPath,
-                  onTap: () => Navigator.of(context).pushNamed('/resume')),
+              TextLink('Résumé', kResumeUrl),
             ],
           ),
         ],

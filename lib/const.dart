@@ -1,6 +1,11 @@
 // ─── Links ───────────────────────────────────────────────────────────────────
 
 const kGithubUrl = 'https://github.com/jeremiahlukus/';
+
+/// The Google Doc is the resume of record — Jeremiah maintains it by hand, so
+/// the site links out to it rather than shipping a second copy that can drift.
+const kResumeUrl =
+    'https://docs.google.com/document/d/104vzbtyoHl3syc6PHHk4KlmcbtloF76mo7jhL-HDcio/edit';
 const kLinkedInUrl = 'https://www.linkedin.com/in/jeremiahlukus/';
 const kEmailAddress = 'jeremiahlukus1@gmail.com';
 

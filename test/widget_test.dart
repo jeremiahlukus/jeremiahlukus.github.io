@@ -81,21 +81,17 @@ void main() {
     });
   }
 
-  testWidgets('nav reaches the resume page, which is selectable', (tester) async {
+  testWidgets('nav and contact both link out to the resume of record',
+      (tester) async {
     await pumpSite(tester);
 
-    final navResume = find.text('résumé');
-    expect(navResume, findsOneWidget);
-    await tester.tap(navResume);
-    await tester.pumpAndSettle();
+    // The arrow marks it as leaving the site, unlike the in-app nav links.
+    expect(find.text('résumé ↗'), findsOneWidget);
+    expect(find.text('Résumé'), findsOneWidget);
 
-    expect(find.text('RÉSUMÉ'), findsOneWidget);
-    expect(find.text(kResumeName), findsOneWidget);
-    expect(find.text(kResumeSummary), findsOneWidget);
-    // Text must be copyable — the whole page sits inside one SelectionArea.
-    expect(find.byType(SelectionArea), findsOneWidget);
-    // And the PDF has to be offered.
-    expect(find.text('DOWNLOAD PDF'), findsNWidgets(2));
+    final uri = Uri.parse(kResumeUrl);
+    expect(uri.scheme, 'https');
+    expect(uri.host, 'docs.google.com');
   });
 
   testWidgets('resume page renders every role and skill row', (tester) async {
