@@ -141,7 +141,7 @@ const kWork = <Work>[
 // ─── About ───────────────────────────────────────────────────────────────────
 
 const kAboutParagraphs = <String>[
-  "I'm a lead software engineer with nine years of experience building production "
+  "I'm a lead software engineer with over a decade of experience building production "
       'systems. At Manheim I lead SRE and DevOps work across onshore and '
       'offshore teams.',
   'I contribute to open source across Ruby, Rust, and Flutter — including Lamby, '

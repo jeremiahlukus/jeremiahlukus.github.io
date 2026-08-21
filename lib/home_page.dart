@@ -219,7 +219,7 @@ class _Hero extends StatelessWidget {
     );
 
     final lede = Text(
-      'Nine years building production systems and the infrastructure they run on.',
+      'Over a decade building production systems and the infrastructure they run on.',
       style: sans(size: mobile ? 16 : 18, height: 1.65, color: C.muted),
     );
 
