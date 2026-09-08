@@ -86,6 +86,18 @@ const kWork = <Work>[
     [('App Store', 'https://apps.apple.com/us/app/smart-sprout/id6739066848')],
   ),
   Work(
+    'DoubleShot',
+    'macOS menu bar app that tracks what Claude Code is costing you and holds the '
+        'Mac awake while a long run is in progress. Signed, notarized, and '
+        'shipped as a DMG.',
+    'Author',
+    'Swift · macOS · notarized',
+    [
+      ('Download', 'https://github.com/jeremiahlukus/doubleshot/releases'),
+      ('GitHub', 'https://github.com/jeremiahlukus/doubleshot'),
+    ],
+  ),
+  Work(
     'Acuity PPM',
     'Ongoing DevOps and infrastructure work for a project portfolio '
         'management platform.',
@@ -116,6 +128,15 @@ const kWork = <Work>[
     'Contributor',
     'Ruby · 198 stars',
     [('GitHub', 'https://github.com/rails-lambda/lambdakiq')],
+  ),
+  Work(
+    'speckit-skills',
+    'Spec-driven development plugin for Claude Code: the spec-kit loop across '
+        'seven stack profiles, with a checker that resolves every requirement to '
+        'the test that proves it.',
+    'Author',
+    'Claude Code plugin · 6 skills',
+    [('GitHub', 'https://github.com/jeremiahlukus/speckit-skills')],
   ),
   Work(
     'authorize_net_plugin',
@@ -165,7 +186,7 @@ const kServices = <String>[
 // ─── Stack ───────────────────────────────────────────────────────────────────
 
 const kStack = <(String, List<String>)>[
-  ('MOBILE', ['Flutter', 'Dart', 'iOS', 'Android']),
+  ('MOBILE & DESKTOP', ['Flutter', 'Dart', 'Swift', 'iOS', 'Android', 'macOS']),
   ('BACKEND', ['Ruby on Rails', 'Node.js', 'TypeScript', 'REST APIs']),
   ('CLOUD & DEVOPS', ['AWS', 'CDK', 'SAM', 'Docker', 'Terraform', 'CI/CD']),
   ('DATA', ['Firebase', 'PostgreSQL', 'Redis', 'SQLite']),
