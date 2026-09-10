@@ -43,3 +43,14 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+# Credentials — never commit. This repo publishes to a public Pages site.
+keys.txt
+*.pem
+.env
+.env.*
+
+# Personal documents kept in this directory as working files, not site content.
+NCP_Audit_Manager_Resume.docx
+Nicole_Parrack_CPA_Resume.docx
+JeremiahParrackResume.docx
+1517448695296.jpeg
